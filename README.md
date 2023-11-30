@@ -44,3 +44,7 @@ Red Hat OpenShift Service on AWS (ROSA) Workshops プロジェクトは、イン
 2. [\[ハンズオン\] (オプション)ROSAクラスターでのJavaアプリケーション開発 スターターラボ](docs/rosa-sample-app-develop)
 2. [\[ハンズオン\] (オプション)GitHubを利用したROSAクラスターへのアクセス](docs/rosa-access)
 2. [\[補足情報\] ECS/EKS/ROSAの比較情報](docs/rosa-compare)
+
+### コンテンツ (HCP)
+1. [\[ハンズオン\] AWS Security Token Service (STS) を使用したROSAクラスターの作成](docs/rosa-hcp-create)
+
