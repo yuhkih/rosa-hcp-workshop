@@ -43,12 +43,19 @@ terraform apply rosa.tfplan
 
 AWS CLI を使用して作成された VPC と Subnet を確認します。
 
+VPC をリストします。
+```
+aws ec2 describe-vpcs
+```
+
+Subnet をリストします。
 ```
 aws ec2 describe-subnets | jq -r '.Subnets[] | [ .CidrBlock, .SubnetId, .AvailabilityZone, .Tags[].Value ] | @csv'
 ```
 
+NAT Gateway をリストします。
 ```
-aws ec2 describe-nat-gateways | jq -r .NatGateways[].NatGatewayId
+aws ec2 describe-nat-gateways | jq -r '.NatGateways[] | [.NatGatewayId, .State] | @csv'
 ```
 
 
