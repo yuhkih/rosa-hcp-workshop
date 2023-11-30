@@ -40,6 +40,14 @@ terraform apply rosa.tfplan
 
 AWS CLI を使用して作成された VPC と Subnet を確認します。
 
+```
+aws ec2 describe-subnets | jq -r '.Subnets[] | [ .CidrBlock, .SubnetId, .AvailabilityZone, .Tags[].Value ] | @csv'
+```
+
+```
+aws ec2 describe-nat-gateways | jq -r .NatGateways[].NatGatewayId
+```
+
 
 # ROSA HCP Cluster の 作成
 
@@ -54,6 +62,8 @@ hcp reate cluster aws \
  --zones $ZONES \
  --namespace $NAMESPACE
 ```
+
+
 
 
 # ROSA HCP Cluster へのアクセス確認
