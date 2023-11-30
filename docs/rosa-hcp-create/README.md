@@ -24,6 +24,7 @@ terraform init
 ```
 export CLUSTER_NAME=my-hpc-cluster
 export REGION=us-east-2
+export AZ=["us-east-2a", "us-east-2b", "us-east-2c"]
 ```
 
 Terraform の plan を作成します。
