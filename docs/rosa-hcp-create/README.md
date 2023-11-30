@@ -41,11 +41,11 @@ terraform apply rosa.tfplan
 
 ## 作成された Subnet と NAT Gateway の確認
 
-AWS CLI を使用して作成された VPC と Subnet を確認します。
+terraform で apply した時のログにも出ていますが、ここでは AWS CLI の練習も兼ねて、AWS CLI を使用して作成された VPC と Subnet 等を確認します。
 
 VPC をリストします。
 ```
-aws ec2 describe-vpcs
+aws ec2 describe-vpcs | jq -r '.Vpcs[] | [.CidrBlock, .VpcId, .State] | @csv'
 ```
 
 Subnet をリストします。
