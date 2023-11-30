@@ -6,7 +6,7 @@ HCP ROSA は、ユーザーが既にもっているネットワークにデプ�
 ここの手順は、ドキュメントの「<a href="https://docs.openshift.com/rosa/rosa_hcp/rosa-hcp-sts-creating-a-cluster-quickly.html#rosa-hcp-creating-vpc" target="_blank">Creating a Vritual Private Cloud for your ROSA with HCP clusters</a>
 」をベースにしています。
 
-## terraform を使用した Subnet と NAT Gateway の作成
+## terraform を使用した VPC, Subnet,  NAT Gateway 等の必要な Network リソースの作成
 
 ```
 git clone https://github.com/openshift-cs/terraform-vpc-example
