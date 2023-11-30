@@ -39,31 +39,6 @@ Apply して Network を作成します。
 terraform apply rosa.tfplan
 ```
 
-以下のような出力が出るはずです。
-
-```
-<省略>
-module.vpc.aws_route.private_nat_gateway[2]: Creation complete after 1s [id=r-rtb-0450c880ed2f1c9131080289494]
-module.vpc.aws_route.private_nat_gateway[1]: Creation complete after 1s [id=r-rtb-0e8a172ae7dceff351080289494]
-
-Apply complete! Resources: 31 added, 0 changed, 0 destroyed.
-
-Outputs:
-
-cluster-private-subnets = [
-  "subnet-0b99d3132ac4385a0",
-  "subnet-0b004648512872083",
-  "subnet-0ea945bfaedc67bc3",
-]
-cluster-public-subnets = [
-  "subnet-0205e882a6038c687",
-  "subnet-0838709de6d36ea43",
-  "subnet-0e968b1965e53084b",
-]
-cluster-subnets-string = "subnet-0205e882a6038c687,subnet-0838709de6d36ea43,subnet-0e968b1965e53084b,subnet-0b99d3132ac4385a0,subnet-0b004648512872083,subnet-0ea945bfaedc67bc3"
-$
-````
-
 ## 作成された Subnet と NAT Gateway の確認
 
 AWS CLI を使用して作成された VPC と Subnet を確認します。
