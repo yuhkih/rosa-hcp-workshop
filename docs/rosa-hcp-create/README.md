@@ -6,6 +6,7 @@ HCP ROSA は、ユーザーが既にもっているネットワークにデプ�
 ここの手順は、ドキュメントの「<a href="https://docs.openshift.com/rosa/rosa_hcp/rosa-hcp-sts-creating-a-cluster-quickly.html#rosa-hcp-creating-vpc" target="_blank">Creating a Vritual Private Cloud for your ROSA with HCP clusters</a>
 」をベースにしています。
 
+## terraform を使用した Subnet と NAT Gateway の作成
 
 ```
 git clone https://github.com/openshift-cs/terraform-vpc-example
@@ -24,13 +25,12 @@ terraform init
 ```
 export CLUSTER_NAME=my-hpc-cluster
 export REGION=us-east-2
-export AZ=["us-east-2a", "us-east-2b", "us-east-2c"]
 ```
 
-Terraform の plan を作成します。
+Terraform の plan を作成します。以下は Multi AZ 環境の Network を作成します。
 
 ```
-terraform plan -out rosa.tfplan -var region=$REGION -var cluster_name=$CLUSTER_NAME
+terraform plan -out rosa.tfplan -var region=$REGION -var cluster_name=$CLUSTER_NAME -var single_az_only=false
 ```
 
 Apply して Network を作成します。
@@ -38,6 +38,8 @@ Apply して Network を作成します。
 ```
 terraform apply rosa.tfplan
 ```
+
+## 作成された Subnet と NAT Gateway の確認
 
 AWS CLI を使用して作成された VPC と Subnet を確認します。
 
