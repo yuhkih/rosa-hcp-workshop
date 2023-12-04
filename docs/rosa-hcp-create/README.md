@@ -108,5 +108,50 @@ OIDC Provider を作成します
 rosa create oidc-provider --cluster  $CLUSTER_NAME
 ```
 
+ROSA のクラスターができるまで以下のコマンドでモニターします。大体 10分ほどかかるはずです。
+
+```
+rosa logs install -c my-hpc-cluster --watch
+```
+
+
 
 # ROSA HCP Cluster へのアクセス確認
+
+インストールが完了したら管理者ユーザーを作成します。
+ログインコマンドが表示されますが、これはコマンドが終了してから、数分待つ必要があります。
+
+```
+$ rosa create admin --cluster=$CLUSTER_NAME
+I: Admin account has been added to cluster 'my-hpc-cluster'.
+I: Please securely store this generated password. If you lose this password you can delete and recreate the cluster admin user.
+I: To login, run the following command:
+
+   oc login https://api.my-hpc-cluster.rc4b.p3.openshiftapps.com:443 --username cluster-admin --password abc123-XYZZH-1dNpZ-DBVjg
+
+I: It may take several minutes for this access to become active.
+$
+```
+
+数分待ってから、上の出力で現れたログインコマンドを実行します。
+
+```
+$  oc login https://api.my-hpc-cluster.rc4b.p3.openshiftapps.com:443 --username cluster-admin --password abc123-XYZZH-1dNpZ-DBVjg
+Login successful.
+
+You have access to 77 projects, the list has been suppressed. You can list all projects with 'oc projects'
+
+Using project "default".
+$ 
+```
+
+`oc get nodes` コマンドで compute node ができたか確認します。
+
+```
+$ oc get nodes
+NAME                                       STATUS   ROLES    AGE     VERSION
+ip-10-0-0-72.us-east-2.compute.internal    Ready    worker   9m44s   v1.27.6+b49f9d1
+ip-10-0-1-195.us-east-2.compute.internal   Ready    worker   70s     v1.27.6+b49f9d1
+ip-10-0-2-242.us-east-2.compute.internal   Ready    worker   9m28s   v1.27.6+b49f9d1
+$
+```
