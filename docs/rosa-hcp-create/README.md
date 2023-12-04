@@ -119,7 +119,7 @@ rosa logs install -c my-hpc-cluster --watch
 # ROSA HCP Cluster へのアクセス確認
 
 インストールが完了したら管理者ユーザーを作成します。
-ログインコマンドが表示されますが、これはコマンドが終了してから、数分待つ必要があります。
+ログインコマンド (`oc login`) パスワード付きで標準出力に表示されます。これはコマンドが終了してから、数分待つ必要があります。
 
 ```
 $ rosa create admin --cluster=$CLUSTER_NAME
@@ -133,7 +133,7 @@ I: It may take several minutes for this access to become active.
 $
 ```
 
-数分待ってから、上の出力で現れたログインコマンドを実行します。
+数分待ってから、上の出力で現れたログインコマンド(`oc login`) を実行します。
 
 ```
 $  oc login https://api.my-hpc-cluster.rc4b.p3.openshiftapps.com:443 --username cluster-admin --password abc123-XYZZH-1dNpZ-DBVjg
@@ -145,7 +145,7 @@ Using project "default".
 $ 
 ```
 
-`oc get nodes` コマンドで compute node ができたか確認します。
+`oc get nodes` コマンドで compute node ができたか確認します。Worker node が 3本表示されるはずです。
 
 ```
 $ oc get nodes
