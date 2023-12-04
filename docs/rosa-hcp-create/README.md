@@ -265,3 +265,42 @@ curl hello-openshift-test2.apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com
 ```
 oc delete project hello-openshift
 ```
+
+# oc new-app を使用して簡単なサンプルコンテナをデプロイしてみる
+
+前回は kubernetes の標準コマンドを使用してコンテナをデプロイしましたが、今度は同じ事を OpenShift の独自コマンドを使用して行ってみます。
+
+新しい `project` を作成します。
+
+```
+oc new-project hello-openshift2
+```
+
+以下のコマンドで `hello-openshift` コンテナを使った `deployment` と `service` を一気に作成します。この `oc new-app` は OpenShift の独自コマンドです。
+container のイメージが公開している port の情報を持っている場合は、`service` まで作成してくれます。
+
+```
+oc new-app hello-openshift --image quay.io/openshift/origin-hello-openshift
+```
+
+`route` を作成します。
+
+```
+oc expose service hello-oppenshift
+```
+
+作成された `route` を確認します。
+
+```
+oc get route
+```
+
+`curl` コマンドでアクセスして確認します。
+
+```
+$ curl hello-openshift-hello-openshift.apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com
+Hello OpenShift!
+$
+```
+
+ちょっとだけですが、OpenShift の独自コマンドを使うことで手数を減らす事ができるようになっています。
