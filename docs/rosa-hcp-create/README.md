@@ -256,3 +256,12 @@ oc get pods
 ```
 curl hello-openshift-test2.apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com
 ```
+
+# デプロイしたアプリケーションを削除する
+
+作成した `deployment`、`service`、`route` は、`project` を削除することで全て消す事ができます。
+以下のコマンドで実験で使用したアプリケーションを削除します。
+
+```
+oc delete project hello-openshift
+```
