@@ -169,7 +169,8 @@ workers-2  No           1/1       m5.xlarge                          us-east-2c 
 $ 
 ```
 
-`rosa list ingress` コマンドで作成された ingress を確認してみます。default の Load Balancer には NLB が使われているはずです。`LB-TYPE` を確認します。
+`rosa list ingress` コマンドで Cluster と一緒に作成された ingress を確認してみます。default の Load Balancer には NLB が使われているはずです。`LB-TYPE` を確認します。
+この ingress 経由で、HTTP/HTTPS アプリケーションが公開されます。
 
 ```
 $ rosa list ingress -c $CLUSTER_NAME
