@@ -1,9 +1,31 @@
 # ROSA の CLI の準備
 
-ROSA CLI は最新が必要。
-(ここに CLI で rosa や oc コマンドを curl で ダウンロードするガイドを書く)
+`rosa` コマンドと `oc` コマンドをダウンロードして展開します。
 
+```
+curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz
+tar -zxf rosa-linux.tar.gz 
+sudo mv ./rosa /usr/local/bin/
+rosa download oc
+tar -xzf openshift-client-linux.tar.gz 
+sudo mv ./oc /usr/local/bin
+sudo mv ./kubectl /usr/local/bin
+rosa version
+oc version
+```
 
+この手順は、以下のバージョンのコマンドを使用しています。
+
+```
+$ rosa version
+1.2.31
+I: Your ROSA CLI is up to date.
+$ oc version
+Client Version: 4.14.2
+Kustomize Version: v5.0.1
+Unable to connect to the server: dial tcp: lookup api.my-hpc-cluster.rc4b.p3.openshiftapps.com on 172.28.240.1:53: no such host
+$
+```
 
 # ROSA 用の AWS Network の作成
 
