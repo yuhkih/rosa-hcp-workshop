@@ -102,11 +102,10 @@ Cluster の作成を開始します。いろいろ聞かれますが、デフォ
 rosa create cluster --cluster-name=$CLUSTER_NAME --sts --hosted-cp  --region=us-east-2  --subnet-ids=$SUBNET_IDS
 ```
 
-Operator Role を作成します
+Cluster の作成を開始した後に Operator Role を作成します
 
 ```
 rosa create operator-roles --cluster $CLUSTER_NAME
-
 ```
 
 OIDC Provider を作成します
