@@ -237,3 +237,22 @@ Hello OpenShift!
 $
 ```
 
+# 作成したアプリのレプリカ数を増やしてみる
+
+可用性を保つために `Pod` の replica 数を3つに増やしてみます。
+
+```
+oc scale deployment hello-openshift --replicas=3
+```
+
+Pod が ３つになっている事を以下のコマンドで確認します。
+
+```
+oc get pods
+```
+
+３つに増やしても引き続きアプリケーションにアクセスできることを curl コマンドで確認します。(アクセス先 URL は `oc get route` で表示される URL です)
+
+```
+curl hello-openshift-test2.apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com
+```
