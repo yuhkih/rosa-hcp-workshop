@@ -178,3 +178,62 @@ ID    APPLICATION ROUTER                                          PRIVATE  DEFAU
 m3x6  https://apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com  no       yes                       nlb                                                                          
 $
 ```
+
+# 簡単なサンプルコンテナをデプロイしてみる
+
+hello-openshift という Web Server のコンテナをデプロイしてみます。アクセスすると、メッセージを返すシンプルなコンテナです。
+
+`hello-openshift` という `project` (OpenShift で使われる `namespace` の拡張概念) を作成します
+
+```
+oc new-project hello-openshift
+```
+
+`hello-openshift` イメージを使った `deployment` を作成します。名前はコンテナ名と同じ　`hello-openshift` にします。
+
+
+```
+oc create deployment hello-openshift --image=quay.io/openshift/origin-hello-openshift
+```
+
+`deployment` が作成されたか確認します。
+
+```
+oc get deployment
+```
+
+`clusterip` の `service` を作成します。 hello-openshift コンテナが使用している 8080 を公開します。名前はコンテナ名と同じ　`hello-openshift` にします。
+
+```
+oc create service clusterip hello-openshift --tcp=8080:8080
+```
+
+OpenShift での `ingress` の同等の概念である `route` を作成します。HTTP アプリケーションの場合、`route` は、`service` を公開することで作成されます。
+
+```
+oc expose service hello-openshift
+```
+
+`route` が作成されたか確認します。
+
+```
+oc get route
+```
+
+以下のような出力になるはずです。環境によって URL は違います。`route` の名前は、公開した `service` と同じ名前になっているはずです。
+
+```
+$ oc get route
+NAME              HOST/PORT                                                                  PATH   SERVICES          PORT        TERMINATION   WILDCARD
+hello-openshift   hello-openshift-test2.apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com          hello-openshift   8080-8080                 None
+$
+```
+
+作成された `route` にアクセスしてみます。
+
+```
+$ curl hello-openshift-test2.apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com
+Hello OpenShift!
+$
+```
+
