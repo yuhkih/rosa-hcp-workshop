@@ -92,7 +92,7 @@ rosa create account-roles --hosted-cp
 Cluster の作成を開始します。いろいろ聞かれますが、デフォルトで大丈夫です。
 
 ```
-rosa create cluster --cluster-name=$CLUSTER_NAME --sts --hosted-cp  --region=us-east-2  
+rosa create cluster --cluster-name=$CLUSTER_NAME --sts --hosted-cp  --region=us-east-2  --subnet-ids=$SUBNET_IDS
 ```
 
 Operator Role を作成します
