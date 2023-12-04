@@ -1,3 +1,10 @@
+# ROSA の CLI の準備
+
+ROSA CLI は最新が必要。
+(ここに CLI で rosa や oc コマンドを curl で ダウンロードするガイドを書く)
+
+
+
 # ROSA 用の AWS Network の作成
 
 HCP ROSA は、ユーザーが既にもっているネットワークにデプロイする事が前提になります。
