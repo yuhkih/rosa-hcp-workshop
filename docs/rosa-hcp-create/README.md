@@ -58,22 +58,55 @@ NAT Gateway をリストします。
 aws ec2 describe-nat-gateways | jq -r '.NatGateways[] | [.NatGatewayId, .State] | @csv'
 ```
 
+変数 SUBNET_IDS を作成します。
+
+```
+export SUBNET_IDS=<上ででてきた Private と Public Subnet の ID 合計６つをカンマ区切りで>
+
+例：export SUBNET_IDS=subnet-0f0b7ebc07df35c69,subnet-084bb65941bee3d24,subnet-0fdeb4dc0c5415267,subnet-08617cb6e925ef45e,subnet-087957efbdd593739,subnet-09f859213ce4af732
+```
+# ROSA HCP の有効化
+
+以下のリンクをクリックして AWS の ROSA 設定画面に飛びます。
+[https://console.aws.amazon.com/rosa/home#/get-started](https://console.aws.amazon.com/rosa/home#/get-started)
+
+[Enable ROSA with HCP] のボタンをクリックします。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/f5a08db1-9fac-47de-9d88-4bde4dd6e7a6)
+
+有効化されるまで、暫く待ちます。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/26af4b3a-d7c6-4ebe-951f-fac2eac548c5)
+
+HCPが有効化されたら次の画面に進み「Connect accounts] をクリックします。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/596c9a5e-9874-45a9-9183-d46e1de3d13d)
+
+以上で HCP の有効化は完了です。
 
 # ROSA HCP Cluster の 作成
 
+必要な IAM Role を作成します。
+
 ```
-hcp reate cluster aws \
- --name $CLUSTER_NAME \
- --node-pool-replicas=3 \
- --base-domain $BASE_DOMAIN \
- --pull-secret $PULL_SECRET \
- --aws-creds $AWS_CREDS \
- --region $REGION \
- --zones $ZONES \
- --namespace $NAMESPACE
+rosa create account-roles --hosted-cp
 ```
 
+Cluster の作成を開始します。いろいろ聞かれますが、デフォルトで大丈夫です。
 
+```
+rosa create cluster --cluster-name=$CLUSTER_NAME --sts --hosted-cp  --region=us-east-2  
+```
+
+Operator Role を作成します
+
+```
+rosa create operator-roles --cluster $CLUSTER_NAME
+
+```
+
+OIDC Provider を作成します
+
+```
+rosa create oidc-provider --cluster  $CLUSTER_NAME
+```
 
 
 # ROSA HCP Cluster へのアクセス確認
