@@ -68,9 +68,13 @@ aws ec2 describe-nat-gateways | jq -r '.NatGateways[] | [.NatGatewayId, .State] 
 変数 SUBNET_IDS を作成します。
 
 ```
-export SUBNET_IDS=<上ででてきた Private と Public Subnet の ID 合計６つをカンマ区切りで>
+export SUBNET_IDS=<上ででてきた Private と Public Subnet の ID 合計６つをカンマ区切りで並べます>
+```
 
-例：export SUBNET_IDS=subnet-0f0b7ebc07df35c69,subnet-084bb65941bee3d24,subnet-0fdeb4dc0c5415267,subnet-08617cb6e925ef45e,subnet-087957efbdd593739,subnet-09f859213ce4af732
+上記の実際の例
+
+```
+export SUBNET_IDS=subnet-0f0b7ebc07df35c69,subnet-084bb65941bee3d24,subnet-0fdeb4dc0c5415267,subnet-08617cb6e925ef45e,subnet-087957efbdd593739,subnet-09f859213ce4af732
 ```
 # ROSA HCP の有効化
 
