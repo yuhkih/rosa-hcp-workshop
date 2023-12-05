@@ -8,7 +8,7 @@
 aws ec2 describe-subnets | jq -r '.Subnets[] | [ .CidrBlock, .SubnetId, .AvailabilityZone, .Tags[].Value ] | @csv'
 ```
 
-** コマンド実行例: **
+**コマンド実行例:**
 
 ```
 $ aws ec2 describe-subnets | jq -r '.Subnets[] | [ .CidrBlock, .SubnetId, .AvailabilityZone, .Tags[].Value ] | @csv'
@@ -28,7 +28,7 @@ $
 rosa create account-roles
 ```
 
-** コマンド実行例: **
+**コマンド実行例:**
 
 ```
 $ rosa create account-roles
@@ -63,7 +63,7 @@ rosa list account-roles
 ```
 
 
-** コマンド実行例: **
+**コマンド実行例:**
 
 ```
 $ rosa list account-roles
@@ -84,7 +84,7 @@ $
 rosa verify network --watch --region us-east-2 --subnet-ids subnet-07098183112673e5e,subnet-06cf09e21d4ab1e8f  --role-arn arn:aws:iam::864046375925:role/ManagedOpenShift-Installer-Role
 ```
 
-** コマンド実行例: **
+**コマンド実行例:**
 
 ```
 $ rosa verify network --watch --region us-east-2 --subnet-ids subnet-07098183112673e5e,subnet-06cf09e21d4ab1e8f  --role-arn arn:aws:iam::864046375925:role/ManagedOpenShift-Installer-Role
