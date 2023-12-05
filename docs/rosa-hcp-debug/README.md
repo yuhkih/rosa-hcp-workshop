@@ -78,7 +78,7 @@ $
 
 # 3. 作成した ROSA 用の Network を検証する
 
-3-1. ネットワークの検証を行います。検証したい subnet id と、`ManagedOpenShift-Installer-Role` IAM Role の arn が必要になります。
+3-1. ネットワークの検証を行います。検証したい `subnet id` と、`ManagedOpenShift-Installer-Role` IAM Role の arn が必要になります。
 
 ```
 rosa verify network --watch --region us-east-2 --subnet-ids subnet-07098183112673e5e,subnet-06cf09e21d4ab1e8f  --role-arn arn:aws:iam::864046375925:role/ManagedOpenShift-Installer-Role
