@@ -1,6 +1,6 @@
 # ROSA の CLI の準備
 
-`rosa` コマンドと `oc` コマンドをダウンロードして展開します。
+1. `rosa` コマンドと `oc` コマンドをダウンロードして展開します。
 
 ```
 curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz
@@ -10,11 +10,9 @@ rosa download oc
 tar -xzf openshift-client-linux.tar.gz 
 sudo mv ./oc /usr/local/bin
 sudo mv ./kubectl /usr/local/bin
-rosa version
-oc version
 ```
 
-この手順は、以下のバージョンのコマンドを使用しています。
+1. インストールされたコマンドのバージョンを確認します。
 
 ```
 $ rosa version
