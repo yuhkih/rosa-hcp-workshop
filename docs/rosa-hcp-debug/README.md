@@ -97,7 +97,7 @@ rosa verify network --watch --region $REGION --subnet-ids $SUBNET_IDS  --role-ar
 **コマンド実行例:**
 
 ```
-$ rosa verify network --watch --region us-east-2 --subnet-ids subnet-07098183112673e5e,subnet-06cf09e21d4ab1e8f  --role-arn arn:aws:iam::864046375925:role/ManagedOpenShift-Installer-Role
+$ rosa verify network --watch --region $REGION --subnet-ids $SUBNET_IDS  --role-arn $INSTALL_IAM_ROLE_ARN
 I: Verifying the following subnet IDs are configured correctly: [subnet-07098183112673e5e subnet-06cf09e21d4ab1e8f]
 I: subnet-07098183112673e5e: passed
 I: subnet-06cf09e21d4ab1e8f: passed
