@@ -76,7 +76,7 @@ ManagedOpenShift-Worker-Role        Worker         arn:aws:iam::864046375925:rol
 $ 
 ```
 
-# 3. 作成した ROSA 用の Network を Debug する
+# 3. 作成した ROSA 用の Network を検証する
 
 3-1. ネットワークの検証を行います。検証したい subnet id と、`ManagedOpenShift-Installer-Role` IAM Role の arn が必要になります。
 
