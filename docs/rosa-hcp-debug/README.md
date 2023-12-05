@@ -2,13 +2,13 @@
 
 ここでは、何らかの方法で AWS上に ROSA インストール用の Subnet を作成した状態だとします。
 
-AWS の Subnet id を取得します。
+1. AWS の Subnet id を取得します。
 
 ```
 aws ec2 describe-subnets | jq -r '.Subnets[] | [ .CidrBlock, .SubnetId, .AvailabilityZone, .Tags[].Value ] | @csv'
 ```
 
-*コマンド実行例:*
+* コマンド実行例: *
 
 ```
 $ aws ec2 describe-subnets | jq -r '.Subnets[] | [ .CidrBlock, .SubnetId, .AvailabilityZone, .Tags[].Value ] | @csv'
@@ -21,13 +21,13 @@ $
 
 # 作成した ROSA 用の Network を Debug する
 
-STS インストールを前提としています。インストール用の ROSA の IAM Role を作成します。
+2. STS インストールを前提としています。インストール用の ROSA の IAM Role を作成します。
 
 ```
 rosa create account-roles
 ```
 
-*コマンド実行例:*
+* コマンド実行例: *
 
 ```
 $ rosa create account-roles
@@ -62,7 +62,7 @@ rosa list account-roles
 ```
 
 
-*コマンド実行例:*
+* コマンド実行例: *
 
 ```
 $ rosa list account-roles
@@ -75,13 +75,13 @@ ManagedOpenShift-Worker-Role        Worker         arn:aws:iam::864046375925:rol
 $ 
 ```
 
-ネットワークの検証を行います。検証したい subnet id と、`ManagedOpenShift-Installer-Role` IAM Role の arn が必要になります。
+3. ネットワークの検証を行います。検証したい subnet id と、`ManagedOpenShift-Installer-Role` IAM Role の arn が必要になります。
 
 ```
 rosa verify network --watch --region us-east-2 --subnet-ids subnet-07098183112673e5e,subnet-06cf09e21d4ab1e8f  --role-arn arn:aws:iam::864046375925:role/ManagedOpenShift-Installer-Role
 ```
 
-*コマンド実行例:*
+* コマンド実行例: *
 
 ```
 $ rosa verify network --watch --region us-east-2 --subnet-ids subnet-07098183112673e5e,subnet-06cf09e21d4ab1e8f  --role-arn arn:aws:iam::864046375925:role/ManagedOpenShift-Installer-Role
