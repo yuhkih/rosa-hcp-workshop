@@ -80,6 +80,7 @@ $
 
 3-1. ネットワークの検証を行います。検証したい `subnet id` と、`ManagedOpenShift-Installer-Role` IAM Role の arn が必要になります。
 
+必要な情報を環境変数にセットします。Subnetが複数ある場合は、カンマで区切って並べます。
 
 ```
 export REGION=us-east-2
@@ -87,6 +88,7 @@ export SUBNET_IDS=subnet-07098183112673e5e,subnet-06cf09e21d4ab1e8f
 export INSTALL_IAM_ROLE_ARN=arn:aws:iam::864046375925:role/ManagedOpenShift-Installer-Role
 ```
 
+以下のコマンドを実行します。
 
 ```
 rosa verify network --watch --region $REGION --subnet-ids $SUBNET_IDS  --role-arn $INSTALL_IAM_ROLE_ARN
