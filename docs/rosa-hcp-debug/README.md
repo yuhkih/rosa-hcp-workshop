@@ -56,7 +56,7 @@ I: To create an OIDC Config, run the following command:
 $ 
 ```
 
-2-2. 作成された ROLE を確認します。
+2-2. 作成された IAM Role を確認します。
 
 ```
 rosa list account-roles
