@@ -1,4 +1,4 @@
-# 1. Network の SubnetId を確認する
+# 1. AWS network の SubnetId を確認する
 
 ここでは、何らかの方法で AWS上に ROSA インストール用の Subnet を作成した状態だとします。
 
