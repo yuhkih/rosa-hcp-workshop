@@ -144,10 +144,18 @@ Red Hat の ポータルサイトにログインします。(Red Hat アカウ�
 rosa create account-roles --hosted-cp
 ```
 
+必要な変数が全てセットされているか再確認します。もしセットされてない場合は、以前の手順に戻ってセットして下さい。
+
+```
+echo $CLUSTER_NAME
+echo $REGION
+echo $SUBNET_IDS
+```
+
 Cluster の作成を開始します。いろいろ聞かれますが、デフォルトで大丈夫です。
 
 ```
-rosa create cluster --cluster-name=$CLUSTER_NAME --sts --hosted-cp  --region=us-east-2  --subnet-ids=$SUBNET_IDS
+rosa create cluster --cluster-name=$CLUSTER_NAME --sts --hosted-cp  --region=$REGION --subnet-ids=$SUBNET_IDS
 ```
 
 Cluster の作成を開始した後に Operator Role を作成します
