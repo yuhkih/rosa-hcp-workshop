@@ -61,8 +61,10 @@ $
 
 DevSpace にログインします。
 
+OpenShift で起動できるように non-root 化や、Kubernetes 環境用にカスタマイズされた nginx.conf ファイルと、イメージビルド用の Dockerfile をダウンロードします。
+
 ```
-git clone <Dockefile のレポ>
+git clone https://github.com/yuhkih/nginx-for-openshift.git 
 ```
 
 ここでは標準の nginx のアプリをセキュアに作りなおすと同時に、Kubernetes 環境にそったカスタマイズをしてみます。
