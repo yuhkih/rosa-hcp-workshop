@@ -22,7 +22,7 @@ sudo mv ./kubectl /usr/local/bin
 
 2.インストールされたコマンドのバージョンを確認します。
 
-oc コマンドのバージョンを確認します。oc コマンドは kubectl を拡張した OpenShift 独自のコマンドです。kubectl コマンドとほぼ同じ使い方ができます。
+`oc` コマンドのバージョンを確認します。`oc` コマンドは `kubectl` を拡張した OpenShift 独自のコマンドです。`kubectl` コマンドとほぼ同じ使い方ができます。
 
 ```
 $ oc version
@@ -32,7 +32,7 @@ Unable to connect to the server: dial tcp: lookup api.my-hpc-cluster.rc4b.p3.ope
 $
 ```
 
-rosa コマンドは、主に oc コマンドで取り扱う OpenShift のレイヤーより下のレイヤーを取り扱うコマンドです。AWSインフラにアクセスしてクラスターの作成等を行う時に使用します。
+`rosa` コマンドのバージョンを確認します。`rosa` コマンドは、主に `oc` コマンドで取り扱う OpenShift のレイヤーより下のレイヤーを取り扱うコマンドです。AWSインフラにアクセスしてクラスターの作成等を行う時に使用します。
 
 ```
 $ rosa version
