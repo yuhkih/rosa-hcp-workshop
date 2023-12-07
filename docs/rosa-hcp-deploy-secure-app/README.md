@@ -72,7 +72,7 @@ $
 これらのルールは、例えば特定のアプリに PV(Persistent Volume) を持たせてログをそこに出力するようにする。等のように環境によって違う事もありますが、大体の Kubernetes 環境で共通のルールとして使用できます。
 このルールに従っていれば、大半の Kubernetes 環境にコンテナをデプロイする事が可能です。
 
-nginx の設定ファイルである `nginx.conf` を以下のように書き替えます。
+nginx の設定ファイルである `nginx.conf` を以下のように書き替えます。[1]～[4]
 
 ```nginx.conf
 $ cat nginx.conf 
@@ -118,7 +118,7 @@ http {
 
     server {
         # listen       80 default_server;
-        # listen       [::]:80 default_server;   # [4] 1024以下の Well-known ポートは使用しない
+        # listen       [::]:80 default_server;   # [4] 1024以下の Well-known ポートは使用しない。ここでは8080に変更します。
         listen 0.0.0.0:8080;
         server_name  _;
         root         /usr/share/nginx/html;
