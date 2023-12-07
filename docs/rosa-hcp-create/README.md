@@ -122,7 +122,16 @@ export SUBNET_IDS=subnet-0f0b7ebc07df35c69,subnet-084bb65941bee3d24,subnet-0fdeb
 有効化されるまで、暫く待ちます。数分かかるはずです。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/26af4b3a-d7c6-4ebe-951f-fac2eac548c5)
 
-HCPが有効化されたら次の画面に進み「Connect accounts] をクリックします。
+有効化が完了すると以下のような表示になっているはずです。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/15d51fb2-22bf-454b-aa95-5cfacacc678b)
+
+画面の一番下に移動して「Continue Red Hat」をクリックします。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/87d5a503-7a0a-4a51-9c08-0aa7ad2dc026)
+
+Red Hat の ポータルサイトにログインします。(アカウントが無い場合ば作成してから、[こちら](https://console.redhat.com/connect/aws) にアクセスします。無料で作成できます）
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/565e0b8d-eada-4d52-a1c3-16c58bae93fa)
+
+日本語を選んで「Connect accounts] をクリックします。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/596c9a5e-9874-45a9-9183-d46e1de3d13d)
 
 以上で HCP の有効化は完了です。
