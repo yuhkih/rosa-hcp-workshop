@@ -45,9 +45,9 @@ podman tag localhost/new-nginx:latest $IMAGE_SERVER/new-nginx/mynginx:latest
 podman push  $IMAGE_SERVER/new-nginx/mynginx:latest
 ```
 
-# Push した Image を使用した コンテナの Deploy
+# Push した Image を使用した Deployment の作成
 
-ローカル Image Registry に Push したイメージを使用して Deploy します。
+ローカル Image Registry に Push したイメージを使用して Deploy します。`new-app` で一気に Service まで作成します。
 
 ```
 oc new-app --name new-nginx --image $IMAGE_SERVER/new-nginx/mynginx:latest
