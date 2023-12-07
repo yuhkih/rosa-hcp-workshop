@@ -117,9 +117,9 @@ export SUBNET_IDS=subnet-0f0b7ebc07df35c69,subnet-084bb65941bee3d24,subnet-0fdeb
 [https://console.aws.amazon.com/rosa/home#/get-started](https://console.aws.amazon.com/rosa/home#/get-started)
 
 [Enable ROSA with HCP] のボタンをクリックします。
-![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/f5a08db1-9fac-47de-9d88-4bde4dd6e7a6)
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/084e3a5c-e76f-460a-9164-b55dfe06a4cb)
 
-有効化されるまで、暫く待ちます。
+有効化されるまで、暫く待ちます。数分かかるはずです。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/26af4b3a-d7c6-4ebe-951f-fac2eac548c5)
 
 HCPが有効化されたら次の画面に進み「Connect accounts] をクリックします。
