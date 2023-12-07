@@ -18,7 +18,7 @@ echo $CLUSTER_NAME
         rosa delete oidc-provider --oidc-config-id <OIDC provider config ID>
 ```
 
-** 実行例: **
+**実行例:**
 
 ```
 $ rosa delete cluster -c $CLUSTER_NAME
