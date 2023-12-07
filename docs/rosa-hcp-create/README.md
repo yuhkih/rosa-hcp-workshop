@@ -6,7 +6,7 @@
 aws configuire
 ```
 
-# ROSA の CLI の準備
+# OpenShift / ROSA の CLI の準備
 
 1.`rosa` コマンドと `oc` コマンドをダウンロードして展開します。
 
