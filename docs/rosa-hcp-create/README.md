@@ -1,4 +1,4 @@
-# AWS CLI の準備
+# 1.AWS CLI の準備
 
 ここも書く。
 
@@ -6,7 +6,7 @@
 aws configuire
 ```
 
-# OpenShift / ROSA の CLI の準備
+# 2.OpenShift / ROSA の CLI の準備
 
 1.`rosa` コマンドと `oc` コマンドをダウンロードして展開します。
 
@@ -40,7 +40,7 @@ $ rosa version
 I: Your ROSA CLI is up to date.
 ```
 
-# ROSA を install する AWS Network の作成
+# 3.ROSA を install する AWS Network の作成
 
 HCP ROSA は、ユーザーが既にもっているネットワークにデプロイする事が前提になります。
 ここでは Terraform を使用して AWS　上に Network を作成します。
@@ -111,7 +111,7 @@ export SUBNET_IDS=<上ででてきた Private と Public Subnet の ID 合計６
 ```
 export SUBNET_IDS=subnet-0f0b7ebc07df35c69,subnet-084bb65941bee3d24,subnet-0fdeb4dc0c5415267,subnet-08617cb6e925ef45e,subnet-087957efbdd593739,subnet-09f859213ce4af732
 ```
-# ROSA HCP の有効化
+# 4.ROSA HCP の有効化
 
 以下のリンクをクリックして AWS の ROSA 設定画面に飛びます。
 [https://console.aws.amazon.com/rosa/home#/get-started](https://console.aws.amazon.com/rosa/home#/get-started)
@@ -136,7 +136,7 @@ Red Hat の ポータルサイトにログインします。(Red Hat アカウ�
 
 以上で HCP の有効化は完了です。
 
-# ROSA HCP Cluster の 作成
+# 5.ROSA HCP Cluster の 作成
 
 必要な IAM Role を作成します。いろいろ聞かれますが、デフォルトで大丈夫です。
 
@@ -178,7 +178,7 @@ rosa logs install -c my-hpc-cluster --watch
 
 
 
-# ROSA HCP Cluster へのアクセス確認
+# 6.ROSA HCP Cluster へのアクセス確認
 
 インストールが完了したら管理者ユーザーを作成します。
 ログインコマンド (`oc login`) パスワード付きで標準出力に表示されます。これはコマンドが終了してから、数分待つ必要があります。
@@ -220,7 +220,7 @@ ip-10-0-2-242.us-east-2.compute.internal   Ready    worker   9m28s   v1.27.6+b49
 $
 ```
 
-# 構成を探って見る
+# 7.構成を探って見る
 
 `rosa list machinepool` コマンドで、AZ毎に `machinepool` が出来ている事を確認します。`machinepool`単位で Node 数を増やす事ができます。
 
