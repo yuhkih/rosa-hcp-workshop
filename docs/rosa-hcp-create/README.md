@@ -196,6 +196,7 @@ $
 ```
 
 数分待ってから、上の出力で現れたログインコマンド(`oc login`) を実行します。
+(準備ができるまで 401 Unauthorized が出ます) 
 
 ```
 $  oc login https://api.my-hpc-cluster.rc4b.p3.openshiftapps.com:443 --username cluster-admin --password abc123-XYZZH-1dNpZ-DBVjg
