@@ -22,15 +22,22 @@ sudo mv ./kubectl /usr/local/bin
 
 2.インストールされたコマンドのバージョンを確認します。
 
+oc コマンドのバージョンを確認します。oc コマンドは kubectl を拡張した OpenShift 独自のコマンドです。kubectl コマンドとほぼ同じ使い方ができます。
+
 ```
-$ rosa version
-1.2.31
-I: Your ROSA CLI is up to date.
 $ oc version
 Client Version: 4.14.2
 Kustomize Version: v5.0.1
 Unable to connect to the server: dial tcp: lookup api.my-hpc-cluster.rc4b.p3.openshiftapps.com on 172.28.240.1:53: no such host
 $
+```
+
+rosa コマンドは、主に oc コマンドで取り扱う OpenShift のレイヤーより下のレイヤーを取り扱うコマンドです。AWSインフラにアクセスしてクラスターの作成等を行う時に使用します。
+
+```
+$ rosa version
+1.2.31
+I: Your ROSA CLI is up to date.
 ```
 
 # ROSA を install する AWS Network の作成
