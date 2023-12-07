@@ -6,7 +6,7 @@
 oc new-project standard-nginx
 ```
 
-docker hub にある、nginx のコンテナを Deployment を使用して Deploy します。
+docker hub にある、nginx の[公式イメージ](https://hub.docker.com/_/nginx)を Deployment を使用して Deploy します。
 
 ```
  oc create deployment standard-nginx --image nginx
@@ -61,13 +61,13 @@ $
 
 ここでは標準の nginx のアプリをセキュアに作りなおすと同時に、Kubernetes 環境にそったカスタマイズをしてみます。
 
-**Rule1:** ログやエラーは標準出力 / 標準入力に吐き出す
+**Rule1:** ログやエラーはローカル・ファイルではなく、標準出力 / 標準入力に吐き出す
 
-**Rule2:** nginx 等の固有ユーザー名は使用しない
+**Rule2:** non-root ユーザーで起動できるように、nginx 等の固有ユーザー名は使用しない
 
-**Rule3:** well-know port と呼ばれる 1024以下の TCPポートは使用しない
+**Rule3:** non-root ユーザーで起動できるように、well-know port と呼ばれる 1024以下の TCPポートは使用しない
 
-**Rule4:** Process ID 等の保存に /run 等の Linux のシステムディレクトリは使用しない
+**Rule4:** non-root ユーザーで起動できるように、Process ID 等の保存に /run 等の Linux のシステムディレクトリは使用しない
 
 このルールに従っていれば、大半の Kubernetes 環境にコンテナをデプロイする事が可能です。
 
