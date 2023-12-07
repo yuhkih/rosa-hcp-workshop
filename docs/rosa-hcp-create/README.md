@@ -138,7 +138,7 @@ Red Hat の ポータルサイトにログインします。(Red Hat アカウ�
 
 # ROSA HCP Cluster の 作成
 
-必要な IAM Role を作成します。
+必要な IAM Role を作成します。いろいろ聞かれますが、デフォルトで大丈夫です。
 
 ```
 rosa create account-roles --hosted-cp
