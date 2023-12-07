@@ -39,3 +39,24 @@ podman tag localhost/yuhkih/nginx-ubi8:latest $IMAGE_SERVER/new-nginx/mynginx:la
 ```
 podman push  $IMAGE_SERVER/new-nginx/mynginx:latest
 ```
+
+# コンテナの Deploy
+
+```
+oc create deployment new-nginx --image $IMAGE_SERVER/new-nginx/mynginx:latest
+```
+
+```
+oc get pods
+```
+
+**出力例:**
+
+```
+ $ oc get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+new-nginx-599f687494-vk78j      1/1     Running   0          7s
+$ 
+```
+
+
