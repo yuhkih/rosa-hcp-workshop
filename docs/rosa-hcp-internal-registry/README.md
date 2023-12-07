@@ -53,6 +53,26 @@ podman push  $IMAGE_SERVER/new-nginx/mynginx:latest
 oc new-app --name new-nginx --image $IMAGE_SERVER/new-nginx/mynginx:latest
 ```
 
+`new-nginx` という名前で Deployment と Service が作成されている事を確認します。
+
+
+```
+ $ oc get deployment,service
+```
+
+**出力例:**
+
+```
+ $ oc get deployment,service
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/new-nginx   1/1     1            1           5m8s
+
+NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
+service/new-nginx      ClusterIP   172.30.252.226   <none>        8080/TCP            5m8s
+service/nginx-sample   ClusterIP   172.30.121.16    <none>        8080/TCP,8443/TCP   3h46m
+nginx $
+```
+
 今度は Pod が起動している事を確認します。
 
 ```
@@ -67,6 +87,8 @@ NAME                            READY   STATUS    RESTARTS   AGE
 new-nginx-599f687494-vk78j      1/1     Running   0          7s
 $ 
 ```
+
+
 
 サービスを公開します。
 
