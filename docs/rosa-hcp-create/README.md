@@ -128,7 +128,7 @@ export SUBNET_IDS=subnet-0f0b7ebc07df35c69,subnet-084bb65941bee3d24,subnet-0fdeb
 画面の一番下に移動して「Continue Red Hat」をクリックします。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/87d5a503-7a0a-4a51-9c08-0aa7ad2dc026)
 
-Red Hat の ポータルサイトにログインします。(アカウントが無い場合ば作成してから、[こちら](https://console.redhat.com/connect/aws) にアクセスします。無料で作成できます）
+Red Hat の ポータルサイトにログインします。(Red Hat アカウントが無い場合ば作成してから、再度[こちら](https://console.redhat.com/connect/aws) にアクセスします。Red Hat アカウントは無料で作成できます）
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/565e0b8d-eada-4d52-a1c3-16c58bae93fa)
 
 日本語を選んで「Connect accounts] をクリックします。
