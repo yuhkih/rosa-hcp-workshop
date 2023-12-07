@@ -201,6 +201,14 @@ ENTRYPOINT ["nginx"]
 ```
 
 
+これらのファイルを使用して Image をビルドします。
+
+```
+podman build . -t new-nginx
+```
+
+ビルドした Image を確認します。
+
 ```
 podman images
 ```
@@ -209,15 +217,11 @@ podman images
 
 ```
 $ podman images
-REPOSITORY                                                                                                   TAG         IMAGE ID      CREATED         SIZE
-localhost/new-nginx                                                                                          latest      3c732cd2eabb  21 seconds ago  303 MB
+REPOSITORY                                                     TAG         IMAGE ID      CREATED         SIZE
+localhost/new-nginx                                           latest      3c732cd2eabb  21 seconds ago  303 MB
 $ 
 ```
 
-
-```
-podman build . -t new-nginx
-```
 
 
 
