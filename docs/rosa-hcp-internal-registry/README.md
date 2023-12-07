@@ -123,6 +123,3 @@ $ curl new-nginx-new-nginx.apps.rosa.my-hpc-cluster.pd80.p3.openshiftapps.com
 Hello OpenShift World!
 $
 ```
-
-
-**出力例:**
