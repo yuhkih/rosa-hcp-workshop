@@ -184,6 +184,12 @@ rosa logs install -c my-hpc-cluster --watch
 ログインコマンド (`oc login`) パスワード付きで標準出力に表示されます。これはコマンドが終了してから、数分待つ必要があります。
 
 ```
+rosa create admin --cluster=$CLUSTER_NAME
+```
+
+**実行例:**
+
+```
 $ rosa create admin --cluster=$CLUSTER_NAME
 I: Admin account has been added to cluster 'my-hpc-cluster'.
 I: Please securely store this generated password. If you lose this password you can delete and recreate the cluster admin user.
