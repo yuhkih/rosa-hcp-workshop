@@ -173,5 +173,44 @@ http {
 $
 ```
 
+index.html
+
+```
+Hello OpenShift World !
+```
+
+
+Dockerfile
+
+```
+FROM redhat/ubi8
+RUN yum install -y nginx
+COPY index.html /usr/share/nginx/html/index.html
+COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 8080
+CMD ["-g","daemon off;"]
+ENTRYPOINT ["nginx"]
+```
+
+
+```
+podman images
+```
+
+**出力例:**
+
+```
+$ podman images
+REPOSITORY                                                                                                   TAG         IMAGE ID      CREATED         SIZE
+localhost/new-nginx                                                                                          latest      3c732cd2eabb  21 seconds ago  303 MB
+$ 
+```
+
+
+```
+podman build . -t new-nginx
+```
+
+
 
 
