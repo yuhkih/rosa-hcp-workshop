@@ -33,7 +33,7 @@ Unable to connect to the server: dial tcp: lookup api.my-hpc-cluster.rc4b.p3.ope
 $
 ```
 
-# ROSA 用の AWS Network の作成
+# ROSA を install する AWS Network の作成
 
 HCP ROSA は、ユーザーが既にもっているネットワークにデプロイする事が前提になります。
 ここでは Terraform を使用して AWS　上に Network を作成します。
