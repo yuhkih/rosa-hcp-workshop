@@ -1,3 +1,11 @@
+# AWS CLI の準備
+
+ここも書く。
+
+```
+aws configuire
+```
+
 # ROSA の CLI の準備
 
 1.`rosa` コマンドと `oc` コマンドをダウンロードして展開します。
