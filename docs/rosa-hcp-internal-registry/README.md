@@ -19,12 +19,23 @@ Image Registry にログインします。
 podman login -u `oc whoami` -p `oc whoami --show-token` ${IMAGE_SERVER}
 ```
 
+現在、ある image を確認します。
+
+```
+nginx $ podman images
+REPOSITORY                   TAG         IMAGE ID      CREATED         SIZE
+localhost/yuhkih/nginx-ubi8  latest      d623ca329bc4  19 minutes ago  303 MB
+nginx $ 
+```
+
 作成したローカルイメージにタグを付けます。
 
 ```
-podman tag mynginx:latest $IMAGE_SERVER/new-nginx/mynginx:latest
+podman tag localhost/yuhkih/nginx-ubi8:latest $IMAGE_SERVER/new-nginx/mynginx:latest
 ```
 
+イメージを push します
+
 ```
-podman push mynginx:latest $IMAGE_SERVER/new-nginx/mynginx:latest
+podman push  $IMAGE_SERVER/new-nginx/mynginx:latest
 ```
