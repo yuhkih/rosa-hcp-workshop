@@ -1,4 +1,4 @@
-# クラスターを削除する
+# 1.変数を確認する
 
 クラスター名が変数にセットされているか確認します。
 
@@ -6,7 +6,7 @@
 echo $CLUSTER_NAME
 ```
 
-# ROSA クラスターの削除
+# 2.ROSA クラスターの削除
 
 以下のコマンドでクラスターを削除します。
 
@@ -52,7 +52,7 @@ $
 rosa logs uninstall -c $CLUSTER_NAME --watch
 ```
 
-# IAM Role と OIDC Provider の削除
+# 3.IAM Role と OIDC Provider の削除
 
 クラスターの削除が完了したら、Operator 用の IAM Role と OIDC Provider を削除します。
 
