@@ -16,3 +16,4 @@
 
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/cefc2628-73ad-45fa-b851-ab1c809ce9ce)
 
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/a3e74b02-d314-4a3b-af7e-4419545d5ac8)
