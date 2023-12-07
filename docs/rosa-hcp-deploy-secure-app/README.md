@@ -82,7 +82,6 @@ git clone https://github.com/yuhkih/nginx-for-openshift.git
 nginx の設定ファイルである `nginx.conf` を以下のように書き替えます。[1]～[4]
 
 ```nginx.conf
-$ cat nginx.conf 
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
