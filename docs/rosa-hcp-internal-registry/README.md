@@ -42,6 +42,8 @@ podman push  $IMAGE_SERVER/new-nginx/mynginx:latest
 
 # コンテナの Deploy
 
+ローカル Image Registry に Push したイメージを使用して Deploy します。
+
 ```
 oc create deployment new-nginx --image $IMAGE_SERVER/new-nginx/mynginx:latest
 ```
