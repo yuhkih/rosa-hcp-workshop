@@ -1,4 +1,6 @@
 
+# ローカル Image Registry の公開
+
 
 Image Registry をインターネットに公開します。
 
