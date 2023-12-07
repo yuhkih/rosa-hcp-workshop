@@ -80,11 +80,11 @@ $ cat nginx.conf
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
 
-# user nginx;  # 特定の User 名を使用しないようにコメントアウトします。
+# user nginx;  # [1] 特定の User 名を使用しないようにコメントアウトします
 worker_processes auto;
-# error_log /var/log/nginx/error.log;  # エラーログは標準エラーに出力するように書き直します。
+# error_log /var/log/nginx/error.log;  # [2] エラーログは標準エラーに出力するように書き直します。
 error_log /dev/stderr ;
-# pid /run/nginx.pid;　 # Proccess ID の保存は /run を使わずに /tmp に変更します。
+# pid /run/nginx.pid;　 # [3] Proccess ID の保存は /run を使わずに /tmp に変更します。
 pid /tmp/nginx.pid;
 
 # Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
@@ -118,7 +118,7 @@ http {
 
     server {
         # listen       80 default_server;
-        # listen       [::]:80 default_server;   # 1024以下の Well-known ポートは使用しない
+        # listen       [::]:80 default_server;   # [4] 1024以下の Well-known ポートは使用しない
         listen 0.0.0.0:8080;
         server_name  _;
         root         /usr/share/nginx/html;
