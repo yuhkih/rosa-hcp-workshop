@@ -69,6 +69,8 @@ $
 
 **Rule4:** Process ID 等の保存に /run 等の Linux のシステムディレクトリは使用しない
 
+nginx の設定ファイルである `nginx.conf` を以下のように書き替えます。
+
 ```nginx.conf
 $ cat nginx.conf 
 # For more information on configuration, see:
