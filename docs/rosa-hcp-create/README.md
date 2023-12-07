@@ -201,8 +201,14 @@ I: It may take several minutes for this access to become active.
 $
 ```
 
-数分待ってから、上の出力で現れたログインコマンド(`oc login`) を実行します。
+数分待ってから、上の出力で現れた api server の URL、password を使ってログインコマンド(`oc login`) を実行します。
 (準備ができるまで 401 Unauthorized が出ます) 
+
+```
+oc login <API Server> --username cluster-admin --password <password>
+```
+
+**実行例:**
 
 ```
 $  oc login https://api.my-hpc-cluster.rc4b.p3.openshiftapps.com:443 --username cluster-admin --password abc123-XYZZH-1dNpZ-DBVjg
@@ -216,6 +222,12 @@ $
 
 `oc get nodes` コマンドで compute node ができたか確認します。Worker node が 3本表示されるはずです。
 (まれに node の作成に時間がかかる場合があります。何も node が表示されない場合は、さらに10分程度待ってく見てください)
+
+```
+oc get nodes
+```
+
+**実行例:**
 
 ```
 $ oc get nodes
