@@ -81,6 +81,12 @@ Apply して Network を作成します。
 terraform apply rosa.tfplan
 ```
 
+作成された AWS のサブネットIDを変数にセットしておきます。カンマ区切りで6つのサブネットIDが変数にセットされます。
+
+```
+export SUBNET_IDS=$(terraform output -raw cluster-subnets-string)
+```
+
 ## 作成された Subnet と NAT Gateway の確認
 
 terraform で apply した時のログにも出ていますが、ここでは AWS CLI の練習も兼ねて、AWS CLI を使用して作成された VPC と Subnet 等を確認します。
@@ -100,17 +106,6 @@ NAT Gateway をリストします。
 aws ec2 describe-nat-gateways | jq -r '.NatGateways[] | [.NatGatewayId, .State] | @csv'
 ```
 
-変数 SUBNET_IDS を作成します。
-
-```
-export SUBNET_IDS=<上ででてきた Private と Public Subnet の ID 合計６つをカンマ区切りで並べます>
-```
-
-上記の実際の例
-
-```
-export SUBNET_IDS=subnet-0f0b7ebc07df35c69,subnet-084bb65941bee3d24,subnet-0fdeb4dc0c5415267,subnet-08617cb6e925ef45e,subnet-087957efbdd593739,subnet-09f859213ce4af732
-```
 # 4.ROSA HCP の有効化
 
 以下のリンクをクリックして AWS の ROSA 設定画面に飛びます。
