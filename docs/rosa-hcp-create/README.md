@@ -30,6 +30,14 @@ $ aws sts get-caller-identity
 git version
 ```
 
+**出力例:**
+
+```
+$ git version
+git version 2.17.1
+$
+```
+
 # 2.OpenShift / ROSA の CLI の準備
 
 1.`rosa` コマンドと `oc` コマンドをダウンロードして展開します。
