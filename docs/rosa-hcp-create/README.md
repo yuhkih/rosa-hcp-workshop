@@ -2,6 +2,8 @@
 
 ここも書く。
 
+## AWS CLI の install
+
 [こちらの AWS のページ](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/getting-started-install.html)を参考にして AWS CLI をインストールします。
 
 ```
@@ -23,6 +25,8 @@ $ aws sts get-caller-identity
     "Arn": "arn:aws:iam::366607415212:user/yhanada@redhat.com-4w685"
 }
 ```
+
+## Git CLI の install
 
 [こちらのページ](https://git-scm.com/book/ja/v2/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)を参照に git コマンドをインストールします。
 
