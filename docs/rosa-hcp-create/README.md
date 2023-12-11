@@ -6,6 +6,22 @@
 aws configuire
 ```
 
+
+```
+aws sts get-caller-identity
+```
+
+**出力例:**
+
+```
+$ aws sts get-caller-identity
+{
+    "UserId": "AIDAVKW4BG6WLHYHMKFHK",
+    "Account": "366607415212",
+    "Arn": "arn:aws:iam::366607415212:user/yhanada@redhat.com-4w685"
+}
+```
+
 # 2.OpenShift / ROSA の CLI の準備
 
 1.`rosa` コマンドと `oc` コマンドをダウンロードして展開します。
