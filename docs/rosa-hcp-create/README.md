@@ -1,4 +1,4 @@
-# 1.AWS CLI の準備
+# 1.AWS CLI / Git の準備
 
 ここも書く。
 
