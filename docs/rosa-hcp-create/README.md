@@ -7,7 +7,7 @@
 [こちらの AWS のページ](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/getting-started-install.html)を参考にして AWS CLI をインストールします。
 
 ```
-aws configuire
+aws configure
 ```
 
 
