@@ -23,15 +23,18 @@ oc create deployment hello-openshift --image=quay.io/openshift/origin-hello-open
 oc get deployment
 ```
 
-`clusterip` の `service` を作成します。 hello-openshift コンテナが使用している 8080 を公開します。名前はコンテナ名と同じ　`hello-openshift` にします。
+
+
+`service` を作成します。 hello-openshift コンテナが使用している 8080 を公開します。`service` は `deployment` を `expose` する事で作成可能です。
 (コンテナイメージがどのポートを使用しているかをコマンド等で突き止める事もできますが、基本的に事前に知っている必要がある事に注意してください。)
 
 ```
-oc create service clusterip hello-openshift --tcp=8080:8080
+oc expose deployment hello-openshift --port=8080
 ```
 
-OpenShift での `ingress` の同等の概念である `route` を作成します。HTTP アプリケーションの場合、`route` は、`service` を公開することで作成されます。
+補則：`oc create service clusterip hello-openshift --tcp=8080:8080` でも上の操作と同じ事が可能です。
 
+OpenShift での `ingress` と同等の概念である `route` を作成します。HTTP アプリケーションの場合、`route` は、`service` を `expose` する事で作成可能です。
 ```
 oc expose service hello-openshift
 ```
@@ -47,7 +50,7 @@ oc get route
 ```
 $ oc get route
 NAME              HOST/PORT                                                                  PATH   SERVICES          PORT        TERMINATION   WILDCARD
-hello-openshift   hello-openshift-test2.apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com          hello-openshift   8080-8080                 None
+hello-openshift   hello-openshift-test2.apps.rosa.my-hpc-cluster.rc4b.p3.openshiftapps.com          hello-openshift   8080                      None
 $
 ```
 
