@@ -25,8 +25,8 @@ oc get deployment
 
 
 
-`service` を作成します。 hello-openshift コンテナが使用している 8080 を公開します。`service` は `deployment` を `expose` する事で作成可能です。
-(コンテナイメージがどのポートを使用しているかをコマンド等で突き止める事もできますが、基本的に事前に知っている必要がある事に注意してください。)
+`service` を作成します。 `hello-openshift` コンテナが使用している `8080` を公開します。`service` は `deployment` を `expose` する事で作成可能です。
+(コンテナイメージがどのポートを使用しているかをコマンド等で突き止める事もできますが、基本的に事前に知っている必要があります。)
 
 ```
 oc expose deployment hello-openshift --port=8080
