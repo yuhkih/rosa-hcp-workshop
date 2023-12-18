@@ -24,7 +24,7 @@ oc get deployment
 ```
 
 `clusterip` の `service` を作成します。 hello-openshift コンテナが使用している 8080 を公開します。名前はコンテナ名と同じ　`hello-openshift` にします。
-コンテナイメージがどのポートを使用しているかをコマンド等で突き止める事もできますが、基本的に事前に知っている必要がある事に注意してください。
+(コンテナイメージがどのポートを使用しているかをコマンド等で突き止める事もできますが、基本的に事前に知っている必要がある事に注意してください。)
 
 ```
 oc create service clusterip hello-openshift --tcp=8080:8080
