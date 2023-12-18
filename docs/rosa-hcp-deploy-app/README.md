@@ -45,7 +45,7 @@ oc expose service hello-openshift
 oc get route
 ```
 
-以下のような出力になるはずです。環境によって URL は違います。`route` の名前は、公開した `service` と同じ名前になっているはずです。
+以下のような出力になるはずです。環境によって URL は違います。`route` の名前は、公開した `service` と同じ名前になっているはずです。これは、HTTP(Port 80) から `Service` の `8080` にマッピングされている事を意味しています。
 
 ```
 $ oc get route
