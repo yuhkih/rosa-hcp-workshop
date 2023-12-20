@@ -153,4 +153,4 @@ Red Hat の ポータルサイトにログインします。(Red Hat Customer Po
 日本語を選んで「Connect accounts] をクリックします。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/2148e419-4753-421b-a572-bcefc2660df3)
 
-以上で HCP の有効化は完了です。
+以上で前提条件の確認は完了です。
