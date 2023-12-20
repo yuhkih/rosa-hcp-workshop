@@ -136,6 +136,7 @@ $
 ## 4.3 ELB サービスにリンクされたロールの作成
 
 過去に ELB をデプロイした事があれば `AWSServiceRoleForElasticLoadBalancing` というIAM Role が作成されており、以下のような表示になっているはずです。
+
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/35975e14-6847-4b9a-b36e-b52295f0891d)
 
 もし作成されていない場合は、以下のコマンドで作成します。
