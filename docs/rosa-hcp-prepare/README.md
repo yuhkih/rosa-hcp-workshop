@@ -1,7 +1,5 @@
 # 1.AWS CLI / Git の準備
 
-ここも書く。
-
 ## 1.1 AWS CLI の install
 
 [こちらの AWS のページ](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/getting-started-install.html)を参考にして AWS CLI をインストールします。
@@ -80,7 +78,7 @@ $ rosa version
 I: Your ROSA CLI is up to date.
 ```
 
-# 3 ROSA 作成用の token の取得
+# 3. ROSA 作成用の token の取得
 
 ROSA cluster を作成するためには、Red Hat が提供する token が必要です。以下のコマンドを実行します。
 
@@ -113,20 +111,20 @@ $
 以上で token の準備は完了です。
 
 
-# 4.ROSA の前提条件を確認する
+# 4.1 ROSA の前提条件を確認する
 
 ## 4.1 ROSA HCP の有効化
 以下のリンクをクリックして AWS の ROSA 設定画面に飛びます。
 [https://console.aws.amazon.com/rosa/home#/get-started](https://console.aws.amazon.com/rosa/home#/get-started)
 
 [Enable ROSA with HCP] のボタンをクリックします。
-![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/084e3a5c-e76f-460a-9164-b55dfe06a4cb)
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/0c4152d4-c51a-40c2-9440-bc89cfaaf03e)
 
 有効化されるまで、暫く待ちます。数分かかるはずです。
-![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/26af4b3a-d7c6-4ebe-951f-fac2eac548c5)
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/7eee2757-c526-4e28-8666-d5f4b4fce290)
 
-有効化が完了すると以下のような表示になっているはずです。
-![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/15d51fb2-22bf-454b-aa95-5cfacacc678b)
+有効化が完了すると以下のような表示になります。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/29a2de09-8041-46a1-9852-34b2bd52709c)
 
 ## 4.2 Service Quota の確認
 
@@ -149,7 +147,7 @@ aws iam create-service-linked-role --aws-service-name "elasticloadbalancing.amaz
 画面の一番下に移動して「Continue Red Hat」をクリックします。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/87d5a503-7a0a-4a51-9c08-0aa7ad2dc026)
 
-Red Hat の ポータルサイトにログインします。(Red Hat アカウントが無い場合ば作成してから、再度[こちら](https://console.redhat.com/connect/aws) にアクセスします。Red Hat アカウントは無料で作成できます）
+Red Hat の ポータルサイトにログインします。(Red Hat Customer Portal アカウントが無い場合は、作成してから、再度[こちら](https://console.redhat.com/connect/aws) にアクセスします。Red Hat アカウントは無料で作成できます）
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/565e0b8d-eada-4d52-a1c3-16c58bae93fa)
 
 日本語を選んで「Connect accounts] をクリックします。
