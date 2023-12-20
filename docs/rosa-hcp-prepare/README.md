@@ -115,6 +115,7 @@ $
 
 # 4.ROSA HCP の有効化
 
+## 4.1 ROSA HCP の有効化
 以下のリンクをクリックして AWS の ROSA 設定画面に飛びます。
 [https://console.aws.amazon.com/rosa/home#/get-started](https://console.aws.amazon.com/rosa/home#/get-started)
 
@@ -126,6 +127,23 @@ $
 
 有効化が完了すると以下のような表示になっているはずです。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/15d51fb2-22bf-454b-aa95-5cfacacc678b)
+
+## 4.2 Service Quota の確認
+
+もし Service Quota が足りない場合はチケットを上げて確認します。最終的に以下の状態になっていれば大丈夫です。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/41b134f4-8cbc-48bc-b023-104082d3550b)
+
+## 4.3 ELB サービスにリンクされたロールの作成
+
+過去に ELB をデプロイした事があれば `AWSServiceRoleForElasticLoadBalancing` というIAM Role が作成されており、以下のような表示になっているはずです。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/35975e14-6847-4b9a-b36e-b52295f0891d)
+
+もし作成されていない場合は、以下のコマンドで作成します。
+
+```
+aws iam create-service-linked-role --aws-service-name "elasticloadbalancing.amazonaws.com"
+```
+## 4.4 Red Hat Customer Portal の情報とリンクする
 
 画面の一番下に移動して「Continue Red Hat」をクリックします。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/87d5a503-7a0a-4a51-9c08-0aa7ad2dc026)
