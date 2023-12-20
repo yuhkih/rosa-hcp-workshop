@@ -6,6 +6,9 @@
 
 [こちらの AWS のページ](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/getting-started-install.html)を参考にして AWS CLI をインストールします。
 
+
+aws configure を使用して、Access Key ID や AWS Secret Access Key の値を構成します。
+
 ```
 aws configure
 ```
@@ -75,6 +78,39 @@ $ rosa version
 1.2.31
 I: Your ROSA CLI is up to date.
 ```
+
+# 3 ROSA 作成用の token の取得
+
+ROSA cluster を作成するためには、Red Hat が提供する token が必要です。以下のコマンドを実行します。
+
+```
+rosa login
+```
+
+以下のように聞かれます。
+
+```
+$ rosa login
+To login to your Red Hat account, get an offline access token at https://console.redhat.com/openshift/token/rosa
+? Copy the token and paste it here: 
+```
+
+表示されたリンク [https://console.redhat.com/openshift/token/rosa](https://console.redhat.com/openshift/token/rosa) にログインして、token を取得します。Red Hat Portal の ID (無料) が必要になるので、作って無い場合は、作成してからこのリンクに再びアクセスします。
+
+以下の画面が表示されるので、Token をコピーしてプロンプトに貼り付けます。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/a4f34b68-c230-4b55-b3b2-7e602d76a62c)
+
+```
+$ rosa login
+To login to your Red Hat account, get an offline access token at https://console.redhat.com/openshift/token/rosa
+? Copy the token and paste it here: ******************************************************************************************************************************************************************************************************
+
+I: Logged in as 'yuhkih' on 'https://api.openshift.com'
+$
+```
+
+以上で token の準備は完了です。
+
 
 # 3.ROSA を install する AWS Network の作成
 
