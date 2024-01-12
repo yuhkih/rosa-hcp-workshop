@@ -100,6 +100,9 @@ $ curl http://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com
 
 <-- snip! -->
 $
+```
+
+```
 $ curl http://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com  -s -w '%{http_code}\n' -o /dev/null
 503
 $ 
