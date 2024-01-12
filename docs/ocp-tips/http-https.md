@@ -1,7 +1,7 @@
 # HTTP と HTTPS の両方を受け付ける Route を作る
 
 デフォルトでは Route は HTTP か HTTPS のどちらかしかトラフィックを終端しません。
-Route で HTTP/HTTPS の両方を終端するには、Route で `insecureEdgeTerminationPolicy: Allow` を設定します。
+`Route` で HTTP/HTTPS の両方を終端するには、`Route`内で `insecureEdgeTerminationPolicy: Allow` を設定します。
 
 ```
 # Please edit the object below. Lines beginning with a '#' will be ignored,
