@@ -1,4 +1,4 @@
-# HTTP と HTTPS の両方を受け付ける Route を作る
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/a12ab9af-578a-4968-8eae-94fc44afb42c)# HTTP と HTTPS の両方を受け付ける Route を作る
 
 デフォルトでは `Route` は `HTTP` か `HTTPS` のどちらかしかトラフィックを終端しません。
 `Route` で `HTTP`/`HTTPS` の両方を終端するには、`Route`内で `insecureEdgeTerminationPolicy: Allow` を設定します。
@@ -101,10 +101,13 @@ $ curl http://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com
 <-- snip! -->
 $
 ```
+上記のページはブラウザで見るといかのようになる。`Route` が返すエラーページ。
+![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/27366099-b4e0-46c2-af42-62b8c5b5bed7)
+
+この時の `HTTP Status Code` は `503 Service Unavailable` である。
 
 ```
 $ curl http://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com  -s -w '%{http_code}\n' -o /dev/null
 503
 $ 
 ```
-`Status Code` は `503 Service Unavailable` である。
