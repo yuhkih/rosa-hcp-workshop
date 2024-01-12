@@ -70,5 +70,38 @@ DESCRIPTION:
     are redirected to the secure port.
 $ 
 ```
-`Allow` がデフォルトとあるが、明らかにそのようには動いてない。実際の動きは、OCP4.14 時点で `Disable` と同じになる。
+`Allow` がデフォルトとあるが、実際の動きは、OCP4.14 時点で `Disable` と同じ動きになる。もともと HTTPS での接続を強制する流れが一般的になってきているので、気がつかずに `HTTP` での接続をしている事がないように、`Disable` がデフォルトになったのかもしれない。
 また `traffic is sent to the server on the insecure port` とあるが、`Route` から traffic 送られる(`sent`) わけではなく、`Route` での着信ポートの話しなので `received / accepted` の方がわかりやすい気がする。
+
+- デフォルトの状態 (`insecureEdgeTerminationPolicy`指定なし）で、アクセスできないプロトコル側にアクセスすると以下のようなエラーになる。
+```
+$ curl http://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com 
+<-- snip! -->
+
+      <h1>Application is not available</h1>
+      <p>The application is currently not serving requests at this endpoint. It may not have been started or is still starting.</p>
+
+      <div class="alert alert-info">
+        <p class="info">
+          Possible reasons you are seeing this page:
+        </p>
+        <ul>
+          <li>
+            <strong>The host doesn't exist.</strong>
+            Make sure the hostname was typed correctly and that a route matching this hostname exists.
+          </li>
+          <li>
+            <strong>The host exists, but doesn't have a matching path.</strong>
+            Check if the URL path was typed correctly and that the route was created using the desired path.
+          </li>
+          <li>
+            <strong>Route and path matches, but all pods are down.</strong>
+            Make sure that the resources exposed by this route (pods, services, deployment configs, etc) have at least one pod running.
+
+<-- snip! -->
+$
+$ curl http://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com  -s -w '%{http_code}\n' -o /dev/null
+503
+$ 
+```
+`Status Code` は `503 Service Unavailable` である。
