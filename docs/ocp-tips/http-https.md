@@ -50,8 +50,8 @@ $
 
 # 補則情報
 
-・route を HTTP と HTTPS でそれぞれ作るというアイディアは上手くいかない。HOST 名が被るため、どちらか1つしか作成できない。
-・oc explain では `insecureEdgeTerminationPolicy` は以下のように表示される。
+- `route` を `HTTP` と `HTTPS` でそれぞれ作るというアイディアは上手くいかない。`HOST`名が被るため、どちらか1つしか作成できない。
+- `oc explain` では `insecureEdgeTerminationPolicy` は以下のように表示される。
 ```
 $ oc explain route.spec.tls.insecureEdgeTerminationPolicy
 GROUP:      route.openshift.io
