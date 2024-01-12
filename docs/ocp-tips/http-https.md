@@ -37,7 +37,7 @@ hello-openshift   hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com
 $
 ```
 
-どちらでも上手く行く事を確認
+`HTTP` と `HTTPS` のどちらでも上手く行く事を確認
 
 ```
 $ curl https://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com
