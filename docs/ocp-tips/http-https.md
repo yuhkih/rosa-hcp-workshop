@@ -102,7 +102,7 @@ $ curl http://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com
 <-- snip! -->
 $
 ```
-上記のページはブラウザで見るといかのようになる。`Route` が返すエラーページ。
+上記のページはブラウザで見ると以下のようになる。`Route` が返しているエラーページ。
 ![image](https://github.com/yuhkih/rosa-hcp-workshop/assets/8530492/27366099-b4e0-46c2-af42-62b8c5b5bed7)
 
 この時の `HTTP Status Code` は `503 Service Unavailable` である。
