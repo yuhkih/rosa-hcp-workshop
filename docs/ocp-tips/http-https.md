@@ -70,9 +70,9 @@ DESCRIPTION:
     are redirected to the secure port.
 $ 
 ```
-[!NOTE]
-`Allow` がデフォルトとあるが、実際の動きは、OCP4.14 時点で `Disable` と同じ動きになる。もともと HTTPS での接続を強制する流れが一般的になってきているので、気がつかずに `HTTP` での接続をしている事がないように、`Disable` がデフォルトになったのかもしれない。
-また `traffic is sent to the server on the insecure port` とあるが、`Route` から traffic 送られる(`sent`) わけではなく、`Route` での着信ポートの話しなので `received / accepted` の方がわかりやすい気がする。
+> [!NOTE]
+> `Allow` がデフォルトとあるが、実際の動きは、OCP4.14 時点で `Disable` と同じ動きになる。もともと HTTPS での接続を強制する流れが一般的になってきているので、気がつかずに `HTTP` での接続をしている事がないように、`Disable` がデフォルトになったのかもしれない。
+> また `traffic is sent to the server on the insecure port` とあるが、`Route` から traffic 送られる(`sent`) わけではなく、`Route` での着信ポートの話しなので `received / accepted` の方がわかりやすい気がする。
 
 - デフォルトの状態 (`insecureEdgeTerminationPolicy`指定なし）で、アクセスできないプロトコル側にアクセスすると以下のようなエラーになる。
 ```
