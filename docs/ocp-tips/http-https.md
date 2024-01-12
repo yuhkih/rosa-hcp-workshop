@@ -30,18 +30,22 @@ spec:
 
 作成した Route は、1つ
 
+```
 $ oc get route
 NAME              HOST/PORT                                                        PATH   SERVICES          PORT    TERMINATION   WILDCARD
 hello-openshift   hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com          hello-openshift   <all>   edge/Allow    None
 $
+```
 
 どちらでも上手く行く事を確認
 
+```
 $ curl https://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com
 Hello OpenShift!
 $ curl http://hello-openshift-test.apps.rosa-hpxrf.zpq2.p1.openshiftapps.com
 Hello OpenShift!
-$ 
+$
+```
 
 
 # 補則情報
