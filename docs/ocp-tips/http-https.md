@@ -71,4 +71,4 @@ DESCRIPTION:
 $ 
 ```
 `Allow` がデフォルトとあるが、明らかにそのようには動いてない。実際の動きは、OCP4.14 時点で `Disable` と同じになる。
-また `sent to the server on the insecure port` とあるが、`Route` から traffic 送られる(`sent`) わけではなく、`Route` での `Termination` の話しなので `received / accepted` の方が正しい気がする。
+また `traffic is sent to the server on the insecure port` とあるが、`Route` から traffic 送られる(`sent`) わけではなく、`Route` での着信ポートの話しなので `received / accepted` の方がわかりやすい気がする。
