@@ -25,7 +25,7 @@ spec:
 <-- snip -->
 ```
 
-## 実験
+# 実験
 
 
 作成した Route は、1つ
@@ -70,5 +70,5 @@ DESCRIPTION:
     are redirected to the secure port.
 $ 
 ```
-Allow がデフォルトとあるが、明らかにそのようには動いてない。Disable がデフォルト。
-また `sent to the server on the insecure port` とあるが、Route から traffic 送られるわけではなく、route での Termination の話しなので received の方が正しい気がする。
+`Allow` がデフォルトとあるが、明らかにそのようには動いてない。実際の動きは、OCP4.14 時点で `Disable` と同じになる。
+また `sent to the server on the insecure port` とあるが、`Route` から traffic 送られる(`sent`) わけではなく、`Route` での `Termination` の話しなので `received / accepted` の方が正しい気がする。
