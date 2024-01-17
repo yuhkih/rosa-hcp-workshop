@@ -69,9 +69,9 @@ git clone https://github.com/yuhkih/nginx-for-openshift.git
 
 ここでは標準の nginx のアプリをセキュアに作りなおすと同時に、Kubernetes 環境にそったカスタマイズをしてみます。
 
-**Rule1:** ログやエラーはローカル・ファイルではなく、標準出力 / 標準入力に吐き出す
+**Rule1:** ログやエラーはローカル・ファイルではなく、標準出力 / 標準入力に吐き出す (これはセキュリティというより Kubenretes 上のコンテナの一般的な"有るべし")
 
-**Rule2:** non-root ユーザーで起動できるように、nginx 等の固有ユーザー名は使用しない
+**Rule2:** non-root ユーザーで起動できるように、nginx 等の固有ユーザー名は使用しない (Dockerfile 内の USER 指定は、消す必要はないが、OpenShiftでは無視される。ランダムな Userが割り当てられる）
 
 **Rule3:** non-root ユーザーで起動できるように、well-know port と呼ばれる 1024以下の TCPポートは使用しない
 
