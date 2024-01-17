@@ -71,7 +71,7 @@ git clone https://github.com/yuhkih/nginx-for-openshift.git
 
 **Rule1:** ログやエラーはローカル・ファイルではなく、標準出力 / 標準入力に吐き出す (これはセキュリティというより Kubenretes 上のコンテナの一般的な"有るべし")
 
-**Rule2:** non-root ユーザーで起動できるように、nginx 等の固有ユーザー名は使用しない (Dockerfile 内の USER 指定は、消す必要はないが、OpenShiftでは無視される。ランダムな Userが割り当てられる）
+**Rule2:** non-root ユーザーで起動できるように、nginx 等の固有ユーザー名は使用しない (Dockerfile 内の USER 指定がある場合いは、消す必要まではないが、書いてあっても OpenShiftでは無視される。ランダムな Userが割り当てられる）
 
 **Rule3:** non-root ユーザーで起動できるように、well-know port と呼ばれる 1024以下の TCPポートは使用しない
 
@@ -167,6 +167,11 @@ CMD ["-g","daemon off;"]
 ENTRYPOINT ["nginx"]
 ```
 
+[!TIP] このサンプルでは必要ないが、root group (0) に所属するユーザーが OpenShift によって自動的に割り当てられるので、アプリの実行に必要なディレクトリに対して Dockefile 内で以下をおこなっておくのがベストプラクティス。
+```
+RUN chgrp -R 0 /some/directory && \
+   chmod -R g=u /some/directory
+```
 
 これらのファイルを使用して Image をビルドします。
 
