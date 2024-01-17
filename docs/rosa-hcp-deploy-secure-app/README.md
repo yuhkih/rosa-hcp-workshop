@@ -167,11 +167,13 @@ CMD ["-g","daemon off;"]
 ENTRYPOINT ["nginx"]
 ```
 
-[!TIP] このサンプルでは必要ないが、root group (0) に所属するユーザーが OpenShift によって自動的に割り当てられるので、アプリの実行に必要なディレクトリに対して Dockefile 内で以下をおこなっておくのがベストプラクティス。
-```
-RUN chgrp -R 0 /some/directory && \
-   chmod -R g=u /some/directory
-```
+>[!TIP]
+>このサンプルでは必要ないが、root group (0) に所属するユーザーが OpenShift によって自動的に割り当てられるので、アプリの実行に必要なディレクトリに対して Dockefile 内で以下をおこなっておくのがベストプラクティスとして存在する。
+>```
+>RUN chgrp -R 0 /some/directory && \
+>   chmod -R g=u /some/directory
+>```
+>こうする事で、`/some/directory` に、root group(0) のユーザーにアプリの実行に十分な権限を与える事ができる。root group というのは、名前とは裏腹にただの一般グループで特別な権限を持つグループではない。
 
 これらのファイルを使用して Image をビルドします。
 
