@@ -66,6 +66,13 @@ aws ec2 describe-nat-gateways | jq -r '.NatGateways[] | [.NatGatewayId, .State] 
 
 # 2.ROSA HCP Cluster の 作成
 
+クラスターを作成するには、Red Hat Customer ポータルの User アカウントが必要です。無料で作成できます。Red Hat Customer ポータルの Userを作成した後、以下のコマンドでログインします。
+
+```
+rosa login
+```
+
+
 必要な IAM Role を作成します。いろいろ聞かれますが、デフォルトで大丈夫です。
 
 ```
