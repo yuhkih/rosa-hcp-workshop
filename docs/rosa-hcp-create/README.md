@@ -23,7 +23,7 @@ terraform init
 変数を準備しておきます。(日本 Region が使用可能になるのは 2024/1月頃なので US-EAST を使用）
 
 ```
-export CLUSTER_NAME=my-hpc-cluster
+export CLUSTER_NAME=my-hcp-cluster
 export REGION=us-east-2
 ```
 
