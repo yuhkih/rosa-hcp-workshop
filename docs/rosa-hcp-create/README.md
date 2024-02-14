@@ -20,11 +20,11 @@ cd terraform-vpc-example
 terraform init
 ```
 
-変数を準備しておきます。(日本 Region が使用可能になるのは 2024/1月頃なので US-EAST を使用）
+変数を準備しておきます。
 
 ```
 export CLUSTER_NAME=myhcpcluster
-export REGION=us-east-2
+export REGION=ap-northeast-1
 ```
 
 Terraform の plan を作成します。以下は Multi AZ 環境の Network を作成します。
