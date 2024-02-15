@@ -24,7 +24,7 @@ terraform init
 
 ```
 export CLUSTER_NAME=myhcpcluster
-export REGION=ap-northeast-1
+export REGION=us-east-2
 ```
 
 Terraform の plan を作成します。以下は Multi AZ 環境の Network を作成します。
